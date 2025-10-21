@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+   
+    <title>Lotto ticket Generator</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="title">
+            <h1>Winning Lotto + Powerball ticket</h1>
+        </div>
+
+        <div class="ticket-display">
+                  
+        </div>
+
+        <div class="button-block">
+            <button id="generate-ticket" onclick="loader()">Generate</button>
+        </div>
+
+         <div class="draw-result">
+            <div class="draw-title">
+                <h1>Draw Result</h1>                
+            </div>
+            <div class="lotto-result">
+                <h3>Lotto Numbers</h3>
+                <div class="lotto-result-numbers"></div>
+            </div>
+            <div class="bonus-result">
+                <h3>Bonus Number</h3>
+                <div class="bonus-result-number"></div>
+            </div>
+            <div class="powerball-result">
+                <h3>PowerBall Number</h3>
+                <div class="powerball-result-number"></div>
+            </div>
+
+            <div class="draw-block">
+                <button id="draw">Click to Draw</button>
+            </div>
+         </div>
+    </div>
+ 
+    <script src="script.js"></script>
+</body>
+</html>
