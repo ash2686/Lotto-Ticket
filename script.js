@@ -43,6 +43,7 @@ function generateTicket(){
 
     lottoResults.innerHTML = '';
     pbResults.innerHTML = '';
+    bonusResults.innerHTML = '';
     drawnNumbers = [];
     counter = 0;
     
