@@ -232,6 +232,7 @@ drawButton.addEventListener("click",runDraw);
 function runDraw(){
     lottoResults.innerHTML = '';
     pbResults.innerHTML = '';
+    bonusResults.innerHTML = '';
     drawnNumbers = [];
     counter = 0;
   interval = setInterval(drawResult,1500);
