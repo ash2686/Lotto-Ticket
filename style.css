@@ -181,7 +181,7 @@ html,body{
 }
 
 .ticket-line .lotto-line p{
-    width: 8%;
+    width: 6%;
     height: 100;
     text-align: center;
     /* animation: appear 3s ease forwards; */
@@ -470,4 +470,51 @@ html,body{
     font-size: 1.2em;
     font-weight: bolder;
     /* background-color: red; */
+}
+
+
+/* ********************** Media Query ***************** */
+
+@media screen and (min-width :390px){
+    .main-container{       
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        height:100vh;
+        width: 100vw;
+        padding: 1rem 0;
+    }
+    .main-container .title{
+        font-size: .6em;
+        height: 5%;
+        margin: 1rem 0;        
+    }
+
+    .main-container .ticket-display{
+        width: 95%;
+        height: 65%;
+        padding: 0 1rem;
+    }
+
+    .ticket-line .line-name,.ticket-line .lotto-line,.ticket-line .power-ball{
+        font-size: .5em;
+    }
+
+    .ticket-line .lotto-line p{
+        width: 10%
+    }
+
+    .ticket-line .power-ball p{
+        width: 1rem;
+    }
+
+
+    .main-container .draw-result{
+        /* display: none; */
+        position: static;
+        bottom:0;
+        width: 100%;
+        height: 20%;
+        flex-direction: row;
+    }
 }
