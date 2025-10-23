@@ -424,6 +424,10 @@ html,body{
 
 }
 
+.main-container .button-block button{
+    padding: .6em 2em;
+}
+
 .draw-result .draw-block{
     width: 100%;
     height: 10%;
@@ -475,7 +479,7 @@ html,body{
 
 /* ********************** Media Query ***************** */
 
-@media screen and (min-width :390px){
+@media screen and (max-width :576px){
     .main-container{       
         justify-content: flex-start;
         align-items: center;
@@ -484,6 +488,8 @@ html,body{
         width: 100vw;
         /* padding: 1rem 0; */
     }
+
+
     .main-container .title{
         font-size: .6em;
         height: 5%;
@@ -514,10 +520,10 @@ html,body{
         position: static;
         bottom:0;
         width: 100%;
-        height: 20%;
+        height: 25%;
         display: grid;
-        grid-template-columns: 56% 22% 22%;  
-        grid-template-rows: auto auto auto; 
+        grid-template-columns: 60% 20% 20%;  
+        grid-template-rows: 15% 65% 20%; 
         padding: 1em;  
     }
 
@@ -525,7 +531,8 @@ html,body{
         grid-column: 1 / -1; 
         grid-row: 1;
         text-align: center;
-        font-size: .6em;
+        font-size: .5em;        
+        /* background-color: yellow; */
     }
 
     .draw-result .lotto-result{
@@ -533,44 +540,53 @@ html,body{
         grid-row: 2;
         /* display: grid;
         grid-template-columns: repeat(3,1fr); */
-        font-size: .5em;    
-        height: 70%;    
+        font-size: .7em;    
+        height: 90%;    
     }
 
     .draw-result .lotto-result .lotto-result-numbers{
         display: grid;
         grid-template-columns: repeat(3,1fr);
         text-align: center;
-        padding: 1em;
+        /* padding: 1em; */
+        font-size: .8em;
     }
     
-    .draw-result .lotto-result h3, .draw-result .bonus-result h3, .draw-result .powerball-result h3{
-        height: 100%;
-        font-size: .5em;
+    .draw-result .lotto-result h3{
+        height: 30%;
+        font-size: 1em;
+    }
+
+    .draw-result .bonus-result h3, .draw-result .powerball-result h3{
+        height: 50%;
     }
 
     .draw-result .bonus-result{
         grid-column: 2;
         grid-row: 2;
-        font-size: .5em;
-        height: 70%;   
+        font-size: .6em;
+        height: 90%;   
     }
 
     .draw-result .powerball-result{
         grid-column: 3;
         grid-row: 2;
-        font-size: .5em;
-        height: 70%;   
+        font-size: .6em;
+        height: 90%;   
     }
 
     .draw-result .draw-block{
         grid-column: 1/-1;
         grid-row: 3;
-        height: 100%;        
+        height: 100%;    
+        width: 50%;
+        /* background-color: yellow;     */
+        margin: auto;
     }
 
     .draw-result .draw-block button{
-        font-size: 1em;
+        font-size: .7em;
+        border-radius: 5px;
     }
 
 }

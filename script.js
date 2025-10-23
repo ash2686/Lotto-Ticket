@@ -165,7 +165,8 @@ function drawResult(){
 
     let newP = document.createElement('p');
     newP.classList.add("res-disp");
-    newP.textContent = `Number - ${newNumber}`;
+    // newP.textContent = `Number - ${newNumber}`;
+    newP.textContent = newNumber;
 
     lottoResults.appendChild(newP);
 
@@ -189,7 +190,7 @@ function drawResult(){
 
             let newP = document.createElement("p");
             newP.classList.add("res-disp");
-            newP.textContent = `Number - ${bonusBall}`;
+            newP.textContent = bonusBall;
 
             bonusResults.appendChild(newP);
 
@@ -213,7 +214,7 @@ function powerBallDraw(){
      let powerNumber = powerBall();
       let newP = document.createElement("p");
       newP.classList.add("res-disp");
-      newP.textContent = `Number - ${powerNumber}`;
+      newP.textContent = powerNumber;
 
       pbResults.appendChild(newP);
 
