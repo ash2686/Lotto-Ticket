@@ -4,15 +4,17 @@ let lottoResults = document.querySelector(".lotto-result-numbers");
 let pbResults = document.querySelector(".powerball-result-number");
 let bonusResults = document.querySelector(".bonus-result-number");
 let winnings = document.querySelector("#winning");
+let siteInfo = document.getElementById("site-info");
 let ticket = {};
 let response= true;
 let interval,interval1,bonusInterval;
 let counter=0;
 let drawnNumbers = [];
 let gameScore=0;
+let drawTime = 500;
 
 drawButton.disabled = true;
-winnings.textContent = "In progress...";
+// winnings.textContent = "Generate Ticket";
 
 // let abc = 10_000_000;
 
@@ -31,45 +33,13 @@ let powerBall = ()=>{
 
 function loader(){
     displayArea.innerHTML = '';
-    displayArea.textContent = 'loading'; 
+    displayArea.textContent = 'loading...'; 
 
-    if(!response){response = confirm("Do you want a new ticket?");}
-    if(response){setTimeout(generateTicket,1000);} 
+    // if(!response){response = confirm("Do you want a new ticket?");}
+    // if(response){setTimeout(generateTicket,1000);} 
     generateTicket();
 }
  
-// ******************************************* AUTO GENERATOR ****************************************
-// let ticketCounter = 0;
-
-// function autoGenerateUntilJackpot() {
-//   // Generate a ticket
-//   generateTicket();
-
-//   ticketCounter++;
-//   console.log("Ticket number:", ticketCounter);
-
-//   // Wait for draw to finish before checking result
-//   setTimeout(() => {
-//     if (gameScore === 1700 || gameScore === 1575 || gameScore === 1500) {
-//       console.log("🎉 Jackpot found!");
-//       winnings.textContent = "JACKPOT FOUND!";
-//       return;
-//     } else {
-//       // Try again after a short delay
-//       autoGenerateUntilJackpot();
-//     }
-//   }, 10); // adjust delay depending on draw timing
-// }
-
-// // Start automatically
-// autoGenerateUntilJackpot();
-
-
-
-// ******************************************* AUTO GENERATOR ****************************************
-
-
-
 function generateLine(){
 
         let lottoLine = [];
@@ -88,13 +58,13 @@ function generateLine(){
 
 function generateTicket(){
     displayArea.innerHTML = '';
-
+    siteInfo.textContent = "Lotto Simulator";
     lottoResults.innerHTML = '';
     pbResults.innerHTML = '';
     bonusResults.innerHTML = '';
     drawnNumbers = [];
     counter = 0;
-    winnings.textContent = "In Progress"
+    // winnings.textContent = "Click to draw Result"
     
     ticket = {};
     
@@ -218,8 +188,8 @@ function drawResult(){
                     }
                 })
             
-                 interval1 = setTimeout(powerBallDraw,200)
-        },200)       
+                 interval1 = setTimeout(powerBallDraw,drawTime)
+        },drawTime)       
         
     }
 }
@@ -252,7 +222,7 @@ function runDraw(){
     bonusResults.innerHTML = '';
     drawnNumbers = [];
     counter = 0;
-  interval = setInterval(drawResult,200);
+  interval = setInterval(drawResult,drawTime);
 }
 
 
@@ -299,8 +269,13 @@ if(typeof finalDraw === 'number'){
     finalDraw = finalDraw;
 }
 }
-  
-  (finalDraw)?winnings.textContent = finalDraw : winnings.textContent="Not a winning ticket";
+  console.log("Final Draw is ",finalDraw);
+  if(finalDraw !=="Not a winning ticket"){
+  siteInfo.textContent = `You have won - ${finalDraw}`;
+  }else{
+    siteInfo.textContent = "Not a winnig ticket";
+  }
+//   (finalDraw)?winnings.textContent = finalDraw : winnings.textContent="Not a winning ticket";
 
 }
 
@@ -313,20 +288,21 @@ function getScore(lotto,bonus,power){
 
 function finalResult(gameScore){
     switch(gameScore) {
-    case 1700: return 10_000_000; // 6,0,1
-    case 1575: return 1_000_000;  // 5,1,1
-    case 1500: return 500_000;    // 5,0,1
-    case 1375: return 250_000;    // 4,1,1
-    case 1300: return 100_000;    // 4,0,1
-    case 1200: return 50_000;     // 6,0,0
-    case 1175: return 20_000;     // 3,1,1
-    case 1100: return 10_000;     // 3,0,1
-    case 1075: return 5_000;      // 5,1,0
-    case 975:  return 1_000;      // 2,1,1
-    case 875:  return 500;        // 4,1,0
-    case 675:  return 100;        // 3,1,0
+    case 1700: return 10_000_000;    // 6,0,1
+    case 1575: return 5_000_000;     // 5,1,1
+    case 1500: return 2_500_000;     // 5,0,1
+    case 1375: return 1_000_000;     // 4,1,1
+    case 1300: return 750_000;       // 4,0,1
+    case 1200: return 500_000;       // 6,0,0
+    case 1175: return 200_000;       // 3,1,1
+    case 1100: return 100_000;       // 3,0,1
+    case 1075: return 250_000;       // 5,1,0
+    case 975:  return 50_000;        // 2,1,1
+    case 875:  return 75_000;        // 4,1,0
+    case 800:  return 40_000;        // 4,0,0  
+    case 675:  return 10_000;        // 3,1,0
     case 600:  return 'Free ticket'  //3,0,0
     case 475:  return 'Free Ticket'  //2,1,0       
-    default:   return 0;          // No win
+    default:   return 'Not a winning ticket';             // No win
   }
 }

@@ -10,7 +10,7 @@
 <body>
     <div class="main-container">
         <div class="title">
-            <h1>Lotto + Powerball ticket Generator</h1>
+            <h1 id="site-info">Lotto Simulator</h1>
         </div>
 
         <div class="ticket-display">
@@ -18,36 +18,39 @@
         </div>
 
         <div class="button-block">
-            <button id="generate-ticket" onclick="loader()">Generate</button>
+            <button id="generate-ticket" onclick="loader()">Generate Ticket</button>
         </div>
 
          <div class="draw-result">
-            <div class="draw-title">
+            <!-- <div class="draw-title">
                 <h1>Draw Result</h1>                
-            </div>
-            <div class="lotto-result">
-                <h3>Lotto Numbers</h3>
-                <div class="lotto-result-numbers"></div>
-            </div>
-            <div class="bonus-result">
-                <h3>Bonus Number</h3>
-                <div class="bonus-result-number"></div>
-            </div>
-            <div class="powerball-result">
-                <h3>PowerBall</h3>
-                <div class="powerball-result-number"></div>
+            </div> -->
+
+            <div class="drawn-balls">
+                            <div class="lotto-result">
+                                <h3>Lotto Numbers</h3>
+                                <div class="lotto-result-numbers"></div>
+                            </div>
+                            <div class="bonus-result">
+                                <h3>Bonus Number</h3>
+                                <div class="bonus-result-number"></div>
+                            </div>
+                            <div class="powerball-result">
+                                <h3>PowerBall</h3>
+                                <div class="powerball-result-number"></div>
+                            </div>
             </div>
 
             <div class="draw-block">
-                <button id="draw">Click to Draw</button>
+                <button id="draw">Draw Result</button>
             </div>
          </div>
 
 
          <div class="money-block">
-                <h1>You won!!</h1>
+            
                 <h2 id="winning"></h2>
-            </div>
+            </div> 
     </div>
  
     <script src="script.js"></script>
